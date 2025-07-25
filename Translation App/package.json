@@ -1,0 +1,15 @@
+{
+  "name": "Scrim-s05rqc4",
+  "description": "https://scrimba.com/fullstack-path-c0fullstack/~0xrr/s08f46942l/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview", 
+    "type": "module" 
+  },
+  "dependencies": {
+    "openai": "^5.10.1",
+    "vite": "latest"
+  }
+}

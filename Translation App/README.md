@@ -122,7 +122,6 @@
 ## 🧠 Future Improvements
 
 * 🔄 Add support for more languages
-* 📱 Make UI fully responsive (mobile-first)
 * 🗣️ Add text-to-speech support for output
 * 💾 Cache translations locally
 * 🌐 Detect source language automatically

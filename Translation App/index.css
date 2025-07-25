@@ -1,0 +1,203 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Reset & Fonts */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-image: url("./assets/worldmap.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25em;
+}
+
+.header-img {
+    width: 160px;
+    max-width: 100%;
+}
+.header-text h1 {
+    color: #32CD32;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 0.2em;
+}
+.header-text p {
+    color: white;
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* ===== MAIN ===== */
+main {
+    border: 4px solid #252F42;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 25px 20px;
+    max-width: 700px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ===== TEXT AREA ===== */
+.text-to-translate {
+    color: #035A9D;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.text-field {
+    border: 1px solid #999;
+    background-color: #EFF0F4;
+    border-radius: 8px;
+    padding: 12px 15px;
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    font-size: 1rem;
+}
+
+/* ===== LANGUAGES ===== */
+.select-language {
+    color: #035A9D;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.languages-options {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lang-option{
+    margin:0 1em 1em ;
+    display: flex;
+    gap: 5px;
+}
+
+
+.option,
+label {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+
+.language-flag {
+    height: 16px;
+    width: auto;
+    border: 1px solid #999;
+}
+
+/* ===== BUTTONS ===== */
+button {
+    background-color: #035A9D;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: background 0.2s ease;
+}
+button:hover {
+    background-color: #023b6a;
+}
+
+/* ===== WARNING ===== */
+.warning {
+    background-color: red;
+    padding: 0.5em 1em;
+    color: white;
+    font-weight: bold;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 0.9rem;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablets and up */
+@media (min-width: 600px) {
+    header {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+    .header-img {
+        width: 30%;
+    }
+    .text-field {
+        padding: 12px 15px;
+    }
+    .languages-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .option,
+    label {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+    .header-text h1 {
+        font-size: 3rem;
+    }
+    .text-to-translate,
+    .select-language {
+        font-size: 1.5rem;
+    }
+    button {
+        font-size: 1.3rem;
+    }
+}

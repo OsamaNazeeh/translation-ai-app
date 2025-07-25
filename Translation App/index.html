@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PollyGlot Translator</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Normalize + Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <img src="./assets/parrot.png" alt="Parrot mascot for PollyGlot Translator" class="header-img" />
+        <div class="header-text">
+            <h1>PollyGlot</h1>
+            <p>Perfect Translation Every Time</p>
+        </div>
+    </header>
+
+    <!-- MAIN APP -->
+    <main>
+        <!-- INPUT -->
+        <section>
+            <h2 class="text-to-translate">Text to translate 👇</h2>
+            <textarea 
+                name="user-input"
+                class="text-field"
+                id="user-input"
+                placeholder="How are you?"
+                required
+            ></textarea>
+        </section>
+
+        <!-- LANGUAGE SELECTION + RESULT -->
+        <section id="translated-text">
+            <fieldset class="languages-options">
+                <legend class="select-language">Select language 👇</legend>
+
+                <div class="lang-option">
+                    <input 
+                        type="radio"
+                        class="option"
+                        id="arabic"
+                        value="arabic"
+                        name="lang" />
+                    <label for="arabic">Arabic 
+                        <img src="./assets/tn_palestine-flag.gif" alt="Arabic Flag" class="language-flag">
+                    </label>
+                </div>
+
+                <div class="lang-option">
+                    <input 
+                        type="radio"
+                        class="option"
+                        id="japanese"
+                        value="japanese"
+                        name="lang" />
+                    <label for="japanese">Japanese 
+                        <img src="./assets/jpn-flag.png" alt="Japanese Flag" class="language-flag">
+                    </label>
+                </div>
+
+                <div class="lang-option">
+                    <input 
+                        type="radio"
+                        class="option"
+                        id="spanish"
+                        value="spanish"
+                        name="lang" />
+                    <label for="spanish">Spanish 
+                        <img src="./assets/sp-flag.png" alt="Spanish Flag" class="language-flag">
+                    </label>
+                </div>
+            </fieldset>
+
+            <button id="translate-btn">Translate</button>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="./index.js" type="module"></script>
+</body>
+</html>

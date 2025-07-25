@@ -1,31 +1,36 @@
 
 let choosenLanguage
 
-document.querySelectorAll('input[type=radio]').forEach(
-    radioBtn => radioBtn.addEventListener(
-    'click', function(e){
-        choosenLanguage = e.target.value
-    }
-))
 
-document.getElementById("translate-btn").addEventListener('click', 
-    function(){
-        const inputText = document.getElementById("user-input").value
-        document.getElementById("user-input").value = ''
-        if(choosenLanguage && inputText)
-            translateTo(choosenLanguage, inputText)
-        else{
-                const warning = document.createElement('h3')
-                warning.classList.add("warning")
-                warning.id = "warning"
-                warning.innerHTML =`Something went wrong<br/> make sure you entered a text` 
-                document.querySelector("main").appendChild(warning)
-                setTimeout( function(){
-                    document.getElementById("warning").remove()
-                },2500)
-            }              
-    }
-)
+function translate(){
+    const inputText = document.getElementById("user-input").value
+    document.getElementById("user-input").value = ''
+    if(choosenLanguage && inputText)
+        translateTo(choosenLanguage, inputText)
+    else{
+            const warning = document.createElement('h3')
+            warning.classList.add("warning")
+            warning.id = "warning"
+            warning.innerHTML =`Something went wrong<br/> make sure you entered a text` 
+            document.querySelector("main").appendChild(warning)
+            setTimeout( function(){
+                document.getElementById("warning").remove()
+            },2500)
+        }        
+}
+
+
+function getLanguage(radioBtn){
+    radioBtn.addEventListener(
+        'click', function(e){
+            choosenLanguage = e.target.value
+
+    })
+}
+
+document.querySelectorAll('input[type=radio]').forEach(radioBtn => getLanguage(radioBtn))
+
+document.getElementById("translate-btn").addEventListener('click', translate)
 
 
 
@@ -36,7 +41,7 @@ async function translateTo(lang, inputText){
             role:"system", 
             content:`You are a linguist with knowledge of every language in existence. 
             You can flawlessly translate any sentence into ${lang}, providing clear, easy-to-understand,
-            and logically accurate meanings — optionally offering definitions for rare or complex word`
+            and logically accurate meanings`
         },
         {
             role:"user",
@@ -78,10 +83,15 @@ function renderOutputtml(translatedText){
         <p class="text-field">${translatedText}</p>
         <button id="start-over">Start Over</button>
     `
+    document.getElementById('user-input').disabled = true
+    
     document.getElementById('translated-text').innerHTML = responseHtml
     
-document.getElementById("start-over").addEventListener('click', function()
+    document.getElementById("start-over").addEventListener('click', function()
     {
+        document.getElementById('user-input').disabled = false
+
+
         document.getElementById('translated-text').innerHTML = `
          <fieldset class="languages-options">
                     <legend class="select-language">Select language 👇</legend>
@@ -93,7 +103,7 @@ document.getElementById("start-over").addEventListener('click', function()
                             value="arabic"
                             name="lang" />
                             
-                            <label for="arabic">Arabic <img src="./assets/tn_palestine-flag.gif" class="language-flag"></label>
+                            <label for="arabic">Arabic <img loading='lazy' src="./assets/tn_palestine-flag.gif" class="language-flag"></label>
                         </div>
                     
                         <div>
@@ -103,7 +113,7 @@ document.getElementById("start-over").addEventListener('click', function()
                             value="japanese" 
                             name="lang" />
                             
-                            <label for="japanese">Japanese <img src="./assets/jpn-flag.png" class="language-flag"></label>
+                            <label for="japanese">Japanese <img loading='lazy' src="./assets/jpn-flag.png" class="language-flag"></label>
                         
                         </div>
                         
@@ -115,11 +125,15 @@ document.getElementById("start-over").addEventListener('click', function()
                             value="spanish" 
                             name="lang"/>
                             
-                            <label for="spanish">Spanish <img src="./assets/sp-flag.png" class="language-flag"></label>
+                            <label for="spanish">Spanish <img loading='lazy' src= "./assets/sp-flag.png" class="language-flag"></label>
                         </div>
                 </fieldset>
                 <button id="translate-btn">Translate</button>
         `
+        document.querySelectorAll('input[type=radio]').forEach(radioBtn => getLanguage(radioBtn))
+    
+        document.getElementById("translate-btn").addEventListener('click', translate)
     })
-
+    
 }
+

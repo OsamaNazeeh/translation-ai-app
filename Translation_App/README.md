@@ -10,13 +10,6 @@
 
 ---
 
-## 📸 Preview
-
-![PollyGlot UI Screenshot](./assets/screenshot.png)
-*(Optional: Add a screenshot here to showcase the UI)*
-
----
-
 ## ⚙️ Tech Stack
 
 | Layer      | Technology                                        |
@@ -45,8 +38,7 @@
 
 ## 🚀 Live Demo
 
-👉 [Try the live app](https://translation-ai-app.osamaforedu.workers.dev/)
-*(Replace with your Cloudflare Pages URL if different)*
+👉 [Try the live app](https://cbdba58c.translation-ai-app.pages.dev)
 
 ---
 

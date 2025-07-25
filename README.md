@@ -121,7 +121,6 @@
 
 ## 🧠 Future Improvements
 
-* 🔄 Add support for more languages
 * 🗣️ Add text-to-speech support for output
 * 💾 Cache translations locally
 * 🌐 Detect source language automatically
